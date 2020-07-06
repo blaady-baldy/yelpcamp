@@ -1,0 +1,27 @@
+<%- include('../partials/header'); %>
+
+<div class="container">
+<header class="jumbotron" style="margin-top: 0px;">
+    <h1>
+        List of Camps
+    </h1>
+    <h3>
+        These are the hand-picked Camps of detective Jake Peralta
+    </h3>
+    <a class="btn btn-lg btn-primary" href="/campgrounds/new">Add New</a>
+</header>
+
+<div class="row" style="display: flex; flex-wrap: wrap;">  
+    <% campgrounds.forEach(function(camp){ %>
+        <div class="col-md-6 col-lg-3">
+            <div class="thumbnail">
+                <img src= "<%=camp.image%>" >
+                <div class="caption"><%= camp.name %>
+                    <div><a class="btn btn-primary btn-small" href="/campgrounds/<%=camp._id%>">More Info</a></div>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+    </div> 
+</div> 
+<%- include('../partials/footer'); %>
